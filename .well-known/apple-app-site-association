@@ -1,0 +1,13 @@
+{
+  "webcredentials": {
+    "apps": ["9NN372483C.app.stuard.you"]
+  },
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["9NN372483C.app.stuard.you"],
+        "components": [{ "/": "/oura/callback*", "comment": "Oura sign-in returns to Stuard" }]
+      }
+    ]
+  }
+}

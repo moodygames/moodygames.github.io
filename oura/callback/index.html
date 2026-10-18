@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Return to Stuard</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f5f2eb; color: #1f3330;
+           font: 17px/1.5 -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; padding: 24px; box-sizing: border-box; }
+    @media (prefers-color-scheme: dark) { body { background: #121414; color: #ebebe3; } }
+    h1 { font-family: "New York", Georgia, serif; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Return to Stuard</h1>
+    <p>Oura sign-in finishes inside the Stuard app. If you landed here, close this page and connect Oura from Stuard on your iPhone.</p>
+  </main>
+  <script>
+    // Never keep sign-in codes or tokens in the address bar or history.
+    if (location.search || location.hash) history.replaceState(null, "", location.pathname);
+  </script>
+</body>
+</html>
