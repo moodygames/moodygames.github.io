@@ -19,8 +19,16 @@
     <p>Oura sign-in finishes inside the Stuard app. If you landed here, close this page and connect Oura from Stuard on your iPhone.</p>
   </main>
   <script>
-    // Never keep sign-in codes or tokens in the address bar or history.
-    if (location.search || location.hash) history.replaceState(null, "", location.pathname);
+    // Oura returns here with the result after "#" (an access token, or an error), which browsers never
+    // send to any server. Hand it straight back to Stuard's sign-in sheet, which is waiting for
+    // stuard-oura://callback, then wipe it from this page's address and history.
+    (function () {
+      var result = location.hash.length > 1 ? location.hash : (location.search.length > 1 ? "#" + location.search.slice(1) : "");
+      history.replaceState(null, "", location.pathname);
+      if (result && /(access_token|error)=/.test(result)) {
+        location.replace("stuard-oura://callback" + result);
+      }
+    })();
   </script>
 </body>
 </html>
